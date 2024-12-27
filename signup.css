@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #000;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    background: url("./images/offer_flyer1.jpg");
+    background-position: center;
+}
+
+nav {
+    position: fixed;
+    padding: 15px 40px;
+    z-index: 1;
+}
+
+nav a img {
+    width: 140px;
+}
+
+.form-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 20px;
+    padding: 40px;
+    width: 600px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .75);
+}
+
+.form-wrapper h2 {
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.form-wrapper form {
+    margin: 20px 0 40px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-control {
+    position: relative;
+    height: 45px;
+}
+
+.form-control input,
+.form-control select,
+.form-control label {
+    width: 100%;
+    color: #fff;
+}
+
+.form-control input {
+    height: 100%;
+    background: #333;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    padding: 0 15px;
+}
+
+.form-control select {
+    height: 45px;
+    background: #333;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    padding: 0 15px;
+}
+
+.form-control label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    pointer-events: none;
+    color: #8c8c8c;
+    transition: all 0.1s ease;
+}
+
+.form-control input:is(:focus, :valid)~label {
+    font-size: 0.75rem;
+    transform: translateY(-130%);
+}
+
+.contact-container {
+    display: flex;
+    gap: 15px;
+
+}
+
+.form-control .country-code select{
+    width: 80px;
+
+}
+
+.country-code select,
+.contact-number input {
+    width: 80%; /* Makes country code and contact number share space equally */
+}
+
+.large-field {
+    grid-column: span 2;
+    height: 50px;
+}
+
+.large-field input {
+    height: 100%;
+    width: 100%;
+    background: #333;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    padding: 0 15px;
+}
+
+.form-control input:is(:focus, :valid) {
+    background: #444;
+    padding: 16px 20px 0;
+}
+
+.form-wrapper button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 0.9rem;
+    background: rgb(69, 110, 212);
+    color: #fff;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    margin: 20px 0 10px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.form-wrapper button:hover {
+    background: #3898ff;
+}
+
+.form-wrapper a {
+    text-decoration: none;
+}
+
+.form-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.form-wrapper :where(label, p, small, a) {
+    color: #b3b3b3;
+}
+
+.form-wrapper p a {
+    color: #fff;
+}
+
+.form-wrapper small {
+    display: block;
+    margin-top: 10px;
+    color: #b3b3b3;
+}
+
+.form-wrapper small a {
+    color: #0071eb;
+}
+
+@media (max-width: 740px) {
+    body::before {
+        display: none;
+    }
+
+    nav, .form-wrapper {
+        padding: 15px;
+    }
+
+    nav a img {
+        width: 120px;
+    }
+
+    .form-wrapper {
+        width: 90%;
+        top: 40%;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        gap: 10px; /* Reduces gap between inputs on smaller screens */
+    }
+
+    .country-code select,
+    .contact-number input {
+        width: 100%; /* Ensures inputs stack on top of each other */
+    }
+
+    form button {
+        grid-column: span 1;
+    }
+}
+
+
+
+.error-message {
+    display: none; /* Initially hidden */
+    color: #e63946;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}

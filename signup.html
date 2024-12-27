@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Sign Up Page | Enhanced Validation</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <nav>
+        <a href="#"><img src="./images/MainLogo.png" alt="logo"></a>
+    </nav>
+    <div class="form-wrapper">
+        <h2>Sign Up</h2>
+        <form id="signupForm" action="#">
+            <div class="form-grid">
+                <div class="form-control large-field">
+                    <input type="text" id="fullName" required>
+                    <label>Full Name</label>
+                    <small class="error" id="fullNameError"></small>
+                </div>
+                <div class="form-control">
+                    <input type="email" id="email" required>
+                    <label>Email ID</label>
+                    <small class="error" id="emailError"></small>
+                </div>
+                
+                <div class="form-control contact-container">
+                    <div class="country-code large-field">
+                        <select id="countryCode" required>
+                            <option value="" disabled selected>+1</option>
+                            <option value="1">+1</option>
+                            <option value="44">+44</option>
+                            <option value="91">+91</option>
+                        </select>
+                    </div>
+                    <div class="form-control contact-number large-field">
+                        <input type="text" id="contactNumber" required>
+                        <label>Contact Number</label>
+                    </div>
+                    <span class="error-message" id="contactNumberError"></span>
+                    
+                </div>
+                
+                <div class="form-control">
+                    <select id="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <input type="date" id="dob" required>
+                    <label>Date of Birth</label>
+                    <small class="error" id="dobError"></small>
+                </div>
+
+                <div class="form-control">
+                    <input type="password" id="password" required>
+                    <label>Password</label>
+                </div>
+                <span class="error-message" id="passwordError"></span>
+               
+                <div class="form-control">
+                    <input type="password" id="confirmPassword" required>
+                    <label>Confirm Password</label>
+                </div>
+                <span class="error-message" id="confirmPasswordError"></span>
+               
+                
+                <div class="form-control large-field">
+                    <select id="securityQuestion" required>
+                        <option value="" disabled selected>Select Security Question</option>
+                        <option value="sport">Which is your fav sport?</option>
+                        <option value="pet">What is your pet's name?</option>
+                        <option value="school">What is the name of your first school?</option>
+                        <option value="city">What city were you born in?</option>
+                    </select>
+                </div>
+                <span class="error-message" id="securityQuestionError"></span>
+                
+                <div class="form-control large-field">
+                    <input type="text" id="securityAnswer" required>
+                    <label>Answer</label>
+                    <small class="error" id="securityAnswerError"></small>
+                </div>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already a member? <a href="login.html">Sign in now</a></p>
+        <small>
+            This page is protected by Google reCAPTCHA to ensure you're not a bot. 
+            <a href="#">Learn more.</a>
+        </small>
+    </div>
+    <script src="signup.js"></script>
+</body>
+</html>
